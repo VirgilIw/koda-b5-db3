@@ -76,9 +76,12 @@ VALUES
 select *
 FROM directors;
 -- 
-select *
-FROM movies;
+select movies.rating, movies.release_date
+FROM movies
+WHERE extract(YEAR FROM movies.release_date) BETWEEN 2004 AND 2010
+LIMIT 8;
 
 SELECT first_name
 FROM actors
 WHERE first_name LIKE '%s';
+
